@@ -1,0 +1,228 @@
+<html>
+	<head>
+	<title>02_javaNote</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="../css/green.css" />
+	<link rel="stylesheet" href="../css/style.css" type="text/css">
+	
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/jquery.toTop.js"></script>
+	<script src="../js/collate.js"></script>
+	<style>
+		.to-top{
+		position: absolute;
+	    cursor: default;
+	    display: block;
+	    overflow: hidden;
+	    padding: 0;
+	    position: fixed;
+	    z-index: 9999;
+	    background: url("../img/top.png") no-repeat scroll 0 0 transparent;
+	    right: 30px;
+	    bottom: 30px;
+	    width: 75px;
+	    height: 100px;
+		}
+	
+	    li{ list-style: none; float: left; }
+		#skin li{ width: 10px; height: 10px; padding: 5px; margin-right: 10px; cursor: pointer; }
+		#skin li:nth-child(1){ background: red; }
+		#skin li:nth-child(2){ background: green; }
+		#skin li:nth-child(3){ background: black; }
+		
+		dd p{
+		margin-left:70px;
+		}
+	</style>
+	<script>
+    $(document).ready(function () {
+        $('.to-top').toTop({
+            autohide: true,
+            offset: 420,
+            speed: 500,
+            position: true,
+            right: 15,
+            bottom: 85
+        });
+    });
+
+	</script>
+	<script>
+		window.onload = function(){
+			var link = document.getElementsByTagName("link")[0];
+			var skin = document.getElementById("skin").getElementsByTagName("li");
+
+			for( var i =0; i<skin.length; i++ ){
+				skin[i].onclick = function(){
+					for( var a in skin ){
+						skin[a].className = "";
+					}
+					this.className = "current";
+					link['href'] = "../css/"+this.id+".css";
+				}
+			}
+
+		}
+	</script>
+	</head>
+<body>
+<h1 align="center">02_javaNote</h1>
+		<ul>
+			<li><a href="../index.html">首页<a></li>
+			<li><a href="../main_shuxing.html">上一页<a></li>
+		</ul>
+		<ul id="skin">
+			<li id="red" title="红色"></li>
+			<li id="green" class="current" title="绿色"></li>
+			<li id="black" title="黑色"></li>
+		</ul>
+		<br />
+<div id="main">
+	<h2>通过JDK提供的API学习了Math类</h2>[<I>(掌握)</I>]
+	<div class="content">
+	<p>定义：API(Application Programming Interface)
+		应用程序编程接口(帮助文档)</p>
+	<dl>
+		<dt><B>如何使用呢?</B></dt>
+		<dd><a href="huhd.html">请参照如何使用帮助文档网页</a></dd>
+		<dt><B>Math类:</B></dt>
+		<dd>A:是针对数学进行操作的类</dd>
+		<br/>
+		<dd>B:没有构造方法，因为它的成员都是静态的
+		</dd>
+		<br/>
+		<dd>C:产生随机数
+			public static double random(): [0.0,1.0)
+		</dd>
+		<br/>
+		<dd>D:如何产生一个1-100之间的随机数
+			int number = (int)(Math.random()*100)+1;
+		</dd>
+	</dl>
+	</div>
+	
+	<h2>代码块</h2>[<I>(理解)</I>]
+	<div class="content">
+	<p>用{}括起来的代码。
+	</p>
+	<dl>
+		<dt><B>分类：</B></dt>
+		<dd>A:局部代码块&nbsp;&nbsp;用于限定变量的生命周期，及早释放，提高内存利用率。</dd>
+		<br/>
+		<dd>B:构造代码块&nbsp;&nbsp;把多个构造方法中相同的代码可以放到这里，每个构造方法执行前，首先执行构造代码块。</dd>
+		<br/>
+		<dd>C:静态代码块&nbsp;&nbsp;对类的数据进行初始化，仅仅只执行一次。</dd>
+		<dt><B>静态代码块,构造代码块,构造方法的顺序问题?</B></dt>
+		<dd>静态代码块 > 构造代码块 > 构造方法</dd>
+	</dl>
+	</div>
+	
+	<h2>继承</h2>[<I>(掌握)</I>]
+	<div class="content">
+	<p>定义：把多个类中相同的成员给提取出来定义到一个独立的类中。然后让这多个类和该独立的类产生一个关系， 这多个类就具备了这些内容。这个关系叫继承。
+	</p>
+	<dl>
+		<dt><B>Java中如何表示继承呢?格式是什么呢?</B></dt>
+		<dd>A:用关键字extends表示</dd>
+		<br/>
+		<dd>B:格式：class 子类名 extends 父类名 {}
+		</dd>
+		<dt><B>继承的好处：</B></dt>
+		<dd>A:提高了代码的复用性</dd>
+		<br/>
+		<dd>B:提高了代码的维护性
+		</dd>
+		<br/>
+		<dd>B:让类与类产生了一个关系，是多态的前提
+		</dd>
+		<dt><B>继承的弊端:</B></dt>
+		<dd>A:让类的耦合性增强。这样某个类的改变，就会影响其他和该类相关的类。
+		&nbsp;&nbsp;原则：低耦合，高内聚。&nbsp;&nbsp;耦合：类与类的关系&nbsp;&nbsp;内聚：自己完成某件事情的能力
+		</dd>
+		<br/>
+		<dt><B>Java中继承的特点:</B></dt>
+		<dd>A:Java中类只支持单继承</dd>
+		<br/>
+		<dd>B:Java中可以多层(重)继承(继承体系)
+		</dd>
+		<br/>
+		<dt><B>继承的注意事项：:</B></dt>
+		<dd>A:子类不能继承父类的私有成员</dd>
+		<br/>
+		<dd>B:子类不能继承父类的构造方法，但是可以通过super去访问
+		</dd>
+		<br/>
+		<dd>C:不要为了部分功能而去继承
+		</dd>
+		<br/>
+		<dt><B>什么时候使用继承呢:</B></dt>
+		<dd>A:继承体现的是：is a的关系。</dd>
+		<br/>
+		<dd>B:采用假设法
+		</dd>
+		<br/>
+		<dt><B>Java继承中的成员关系:</B></dt>
+		<dd>A:成员变量
+			<p>a:子类的成员变量名称和父类中的成员变量名称不一样，这个太简单
+			b:子类的成员变量名称和父类中的成员变量名称一样，这个怎么访问呢?
+				子类的方法访问变量的查找顺序：
+					在子类方法的局部范围找，有就使用。
+					在子类的成员范围找，有就使用。
+					在父类的成员范围找，有就使用。
+					找不到，就报错。
+			<p>
+		</dd>
+		<br/>
+		<dd>B:构造方法
+		<p>
+		a:子类的构造方法默认会去访问父类的无参构造方法
+				是为了子类访问父类数据的初始化
+			b:父类中如果没有无参构造方法，怎么办?
+				子类通过super去明确调用带参构造
+				子类通过this调用本身的其他构造，但是一定会有一个去访问了父类的构造
+				让父类提供无参构造
+		</p>
+		</dd>
+		<br/>
+		<dd>C:成员方法
+		<p>
+		a:子类的成员方法和父类中的成员方法名称不一样，这个太简单
+			b:子类的成员方法和父类中的成员方法名称一样，这个怎么访问呢?
+				通过子类对象访问一个方法的查找顺序：
+					在子类中找，有就使用
+					在父类中找，有就使用
+					找不到，就报错
+		</p>
+		<dd>
+		<br/>
+		<dt><B>常遇试题:</B></dt>
+		<dd>A:Override和Overload的区别?Overload是否可以改变返回值类型?</dd>
+		<br/>
+		<dd>B:this和super的区别和各自的作用?
+		</dd>
+		<br/>
+		<dt><B>数据初始化的试题:</B></dt>
+		<dd>A:一个类的初始化过程</dd>
+		<br/>
+		<dd>B:子父类的构造执行过程
+		</dd>
+		<br/>
+		<dd>C:分层初始化
+		</dd>
+		<br/>
+	</dl>
+	</div>
+	
+</div>
+<hr/>
+
+<div class="foot-div">
+<p class="p-foot">This document was created by <a href="./aboutme.html">liwen</a>,
+<br/>
+in 2017.06.12
+</p>
+</div>
+
+<div class="to-top" style="cursor: pointer; position: fixed; right: 15px; bottom: 25px; display: block;">  </div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>星星之火</title>
+	<link rel="stylesheet" type="text/css" href="" />
+	<style type="text/css">
+		div{
+		height:2000px;
+		cursor:url("../img/cursor.ico"),move;
+		}
+		#d2{
+			width:500px;
+			height:20px;
+			border:1px solid red;
+			display:inline-block;
+		}
+		#d3{
+			display:inline-block;
+			background:yellow;
+			height:20px;
+			border
+		}
+	</style>
+	<script type="text/javascript">
+		//window.onload=init;
+		var dingshiqi;//定时器名
+		var sj;//时间定时器名
+		var count=0;//记录星星个数的变量
+		var n = 0;//记录游戏时间的变量
+		var n2 = 0; //记录点击的星星的个数
+		//点击开始游戏的函数
+		function startGame(){
+			window.clearInterval(sj);
+			window.clearInterval(dingshiqi);
+			sj=window.setInterval("shijian()",1000);
+			dingshiqi = window.setInterval("star()",400);
+		}
+		//创建星星的函数
+		function star(){
+			//创建星星
+			var obj = document.createElement("img");
+			//给星星添加src属性
+			obj.src="../img/xingxing.gif"
+			//随即星星大小
+			var w = Math.floor(Math.random()*80+20);
+			obj.width=w;
+			//随即位置
+			var x = Math.floor(Math.random()*1166+100);
+			var y = Math.floor(Math.random()*500+100);
+			obj.style.position="absolute";
+			obj.style.top=y+"px";
+			obj.style.left=x+"px";
+			//添加点击事件
+			obj.onclick=removeStar;
+			count++;
+			var sp = document.getElementById("d3");
+			sp.style.width=count*5+"px";//d3 的宽度自动增加
+			if(count>=100){
+		
+				alert("游戏结束;你的得分:"+n2);
+				window.clearInterval(dingshiqi);
+				location.reload();
+				
+			}
+			//放到body中
+			document.body.appendChild(obj);
+		}
+		//点击删除星星的函数
+		function removeStar(){
+		    n2++;
+			this.parentNode.removeChild(this);
+			count--;
+			var sp = document.getElementById("d3");
+			sp.style.width=count*5+"px";
+		}
+		//点击暂停游戏的函数
+		function zanting(){
+			alert("暂停游戏");
+		}
+		//记录游戏事件的函数
+		function shijian(){
+			n++;
+			var obj = document.getElementById("d1");
+			obj.innerHTML="游戏进行了"+n+"秒";
+		}
+	</script>
+	<script type="text/javascript" src="../js/ripple.js"></script>
+</head>
+<body>
+	<div>
+	<input type="button" value="开始游戏" onclick="startGame()" style="CURSOR:url('../img/cursor.ico'),wait">
+	<input type="button" value="暂停游戏" onclick="zanting()">
+	<span id="d1">游戏进行了0秒</span>
+	<span id="d2">
+	<span id="d3" ></span><!--not useful for the style --><!--the span  -->
+	</span>
+	</div>
+</body>
+</html>

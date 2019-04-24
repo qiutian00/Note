@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>文档展示</title>
+  <link rel="shortcut icon"type="image/x-icon" href="./img/favicon.ico"/>
+  <style>
+    html{ 
+	background:#eee; font-family:arial; 
+	}
+    body{
+	width:90%; max-width: 960px; background:#fff; margin:3em auto 0; padding-top:2em;border:1px solid #ddd;border-width:0 1px;
+	}
+	h1{
+	font-family:MyNewFont;
+	}
+    i.serif{
+	text-transform:lowercase; color:#1abc9c; 
+	}
+    i.serif:hover{
+	color:inherit; 
+	}
+    #wrapper{
+	padding:5% 10%; position:relative;
+	}
+    #tagline{ 
+	color:#999;
+	font-size:16px;
+	margin:-32px 0 32px;
+	padding-bottom:32px;
+	border-bottom:3px double #eee; 
+	}
+	#tagline a{
+	 color:#1ABC9C;
+	 text-decoration:none;
+	}
+	#tagline a:hover{
+	 text-decoration:underline;
+	}
+    #fork{ position:fixed;
+	top:0;
+	right:0;
+	_position:absolute; }
+    #table{ 
+	margin-bottom:32px;
+	color:#888; 
+	}
+    #fork{
+	display:none; 
+	}
+	@font-face {
+		font-family:"MyNewFont";
+		src: url('./ttf/akaFrivolity.ttf');
+
+	}
+	#li01{
+	 margin-bottom:15px;
+	
+	}
+	#a01{
+		text-decoration:none;
+		font-family:MyNewFont;
+	}
+	
+	#a02{
+	 color:#1ABC9C;
+	 text-decoration:none;
+	}
+	#a02:hover{
+	 text-decoration:underline;
+	}
+	#li02{
+	margin-top:5px;
+	color:#1ABC9C;
+	}
+  </style>
+</head>
+<body>
+<div id="wrapper" class="typo typo-selection">
+	<h1>Note</h1><br/>
+    <h2 id="tagline" class="serif"><a href="./index.html">首页</a></h2>
+	
+	<ol id="jiegou_ol">
+	
+	  <li id="li01"><a href="#" id="a01">basic Note</a>
+	  	<ul>
+		  <li id="li02"><a href="./main/01_instruction.html" id="a02">01_instruction</a></li>
+		</ul>
+	  </li>
+	  
+	  <li id="li01"><a href="#" id="a01">javaNote</a>
+		<ul>
+		  <li id="li02"><a href="./main/01_javaNote.html" id="a02">01_javaNote</a></li>
+		  <li id="li02"><a href="./main/02_javaNote_jicheng.html" id="a02">02_javaNote</a></li>
+		</ul>
+	  </li>
+	  
+	  <li id="li01"><a href="#" id="a01">java Demo(上机练习)</a>
+		<ul>
+		  <li id="li02"><a href="./main/01_Demo_news.html" id="a02">01_Demo_news</a></li>
+		  <li id="li02"><a href="./main/02_Demo_index.html" id="a02">02_Demo_index</a></li>
+		  <li id="li02"><a href="./main/03_Demo_table.html" id="a02">03_Demo_table</a></li>
+		  <li id="li02"><a href="./main/04_Demo_ZITILogo.html" id="a02">04_Demo_ZITILogo</a></li>		  
+		</ul>
+	  </li>
+	  
+	  <li id="li01"><a href="#" id="a01">funny Demo(有趣的例子)</a>
+		<ul>
+		  <li id="li02"><a href="./main/01_fun.html" id="a02">the play</a></li>
+		  <li id="li02"><a href="./main/02_fun.html" id="a02">星星之火</a></li>
+		</ul>
+	  </li>
+	  
+	  <li id="li01" id="a01"><a href="#" id="a01">markdown note</a>
+		<ul>
+		  <li id="li02"><a href="./main/01_markdowndemo.html" id="a02">01_markdowndemo</a></li>
+		  <li id="li02"><a href="./main/02_markdownFeelingNature.html" id="a02">02_markdownFeelingNature</a></li>
+		</ul>
+	  </li>
+
+	  <li id="li01"><a href="#" id="a01">funny Demo(参考项目的地址)</a>
+		<ul>
+		  <li id="li02"><a href="https://github.com/man-pages-zh/man-pages-zh.github.io"  id="a02">linux翻译计划</a></li>
+		  <li id="li02"><a href="https://github.com/YUUXIAO/webProject"  id="a02">github站的webproject</a></li>
+		</ul>
+	  </li>	  
+	</ol>
+	<p align="right">written in 2017/06/14 </p>
+</body>
+</html>

@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Note</title>
+	<link rel="shortcut icon"type="image/x-icon" href="./img/favicon.ico"/>
+	<base target="_blank" />
+    <style>
+        h2 {
+            text-align: center;
+            font-family: Consolas, monospace, sans-serif;
+            font-size: 2em;
+            font-weight: lighter;
+            color: #41597A;
+        }
+        #main {
+            margin: auto;
+            max-width: 500px;
+            border-left: 3px lavender solid;
+            padding-left: 10px;
+            color: #41597A;
+            font-family: Consolas, monospace, sans-serif;
+        }
+        a {
+            display: inline-block;
+            width: 38%;
+            color: #597ba8;
+            line-height: 180%;
+            box-sizing: border-box;
+			
+			margin-left:25px;
+        }
+        a:visited {
+            color: #41597A;
+        }
+		a{
+		 text-decoration:none;
+		 target:_blank;
+		}
+    </style>
+	<script>
+	function addTarget(){
+		var tag_a = document.getElementsByTagName('a');
+		for (var i = tag_a.length - 1; i >= 0; i--) {
+			tag_a[i].setAttribute("target","_blank");
+		};
+	}
+	window.onload = addTarget();
+	</script>
+</head>
+<body>
+	<h2>Note</h2>
+    <div id="main">
+        <h3>basic Note</h3>
+        <a href="main/01_instruction.html">01_instruction</a>
+		<h3>java Note</h3>
+        <a href="main/01_javaNote.html">01_javaNote</a>
+        <a href="main/02_javaNote_jicheng.html">02_javaNote</a>
+		<h3>js Demo(上机练习例子)</h3>
+		<a href="./main/01_Demo_news.html">01_Demo_news</a>
+		<a href="./main/02_Demo_index.html">02_Demo_index</a>
+		<a href="./main/03_Demo_table.html">03_Demo_table</a>
+		<a href="./main/04_Demo_ZiTiLogo.html">04_Demo_ZiTiLogo</a>
+		<h3>有趣的例子</h3>
+		<a href="./main/01_fun.html">the play</a>
+		<a href="./main/02_fun.html">星星游戏</a>
+		<h3>markdown note</h3>
+		<a href="main/01_markdowndemo.html">01_markdowndemo</a>
+		<a href="main/02_markdownFeelingNature.html">02_mymarkdownFeelingNature</a>
+		<h3>参考项目的地址</h3>
+		<a href="https://github.com/man-pages-zh/man-pages-zh.github.io">linux翻译计划</a>
+		<a href="https://github.com/YUUXIAO/webProject">github站的webproject</a>
+    </div>
+
+</body>
+</html>

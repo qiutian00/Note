@@ -1,0 +1,117 @@
+﻿<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Note 展示方法</title>
+	<link rel="shortcut icon"type="image/x-icon" href="./img/favicon.ico"/>
+	<base target="_blank" />
+	<style>
+		*{ margin:0;padding: 0; }
+		#wrap{ 
+		width: 990px;
+		height: 400px;
+		margin: 30px auto; 
+		margin-top:60px;
+		
+		}
+		.top .img{ width: 324px; overflow: hidden; }
+	    .img{ 
+		width: 160px; overflow: hidden;
+		}
+		.img>img{ display: block; }
+		.img:hover a p{ bottom: 0; transition: all 0.5s ease 0s; height:120px;}
+		.con div{ position: relative; float: left; margin: 2px; align:center;}
+		.con div a p{
+		position: absolute; left:0; bottom:-50px; width:100%;height:40px;background: rgba(33,33,33,0.5); 
+		
+		padding-top:30px;font-size:25px;color:white;text-align:center;
+		}
+
+		h2{
+		 text-align:center;
+		 margin-top:30px;
+		 font-family:MyNewFont;
+		}
+		.p-foot{
+		text-align:center;
+		}
+		hr{
+		align: center;
+		width:324px;
+		margin-left:490px;
+		margin-bottom:20px;
+		}
+		a{
+		 text-decoration:none;
+		 target:_blank;
+		}
+		.p1 span{
+		color:#93CE69;
+		font-family:shouxieti;		
+		font-size:50px;
+		}
+		.p2 span{
+		color:#FBF7C7;
+		font-family:shouxieti;		
+		font-size:50px;
+		}
+		.p3 span{
+		 color:#FFFFFF;
+		font-family:shouxieti;		
+		font-size:50px;		 
+		}
+		
+		@font-face {
+		  font-family:"MyNewFont";
+		  src: url('./ttf/akaFrivolity.ttf');
+
+		}
+		@font-face{
+		  font-family:"shouxieti";
+		  src: url('./ttf/shouxieti.ttf');
+		}
+	</style>
+	<script>
+	function addTarget(){
+		var tag_a = document.getElementsByTagName('a');
+		for (var i = tag_a.length - 1; i >= 0; i--) {
+			tag_a[i].setAttribute("target","_blank");
+		};
+	}
+	window.onload = addTarget();
+	</script>
+</head>
+<body>
+	<h2>Note 展示</h2>
+	<div id="wrap">
+		<div class="con top">
+			<div class="img">
+				<a href="main_shuxing.html">
+				<img src="./img/tree.png" alt="">
+				<p class="p1"><span>树形展示</span></p>
+				<a>
+			</div>
+
+			<div class="img">
+				<a href="main_wendang.html">
+				<img src="./img/wen.jpg" alt="">
+				<p class="p2"><span>文档展示</span></p>
+				</a>
+			</div>
+			
+			<div class="img">
+				<a href="main_yule.html">
+				<img src="./img/me.png" alt="">
+				<p class="p3"><span>娱乐</span></p>
+				</a>
+			</div>
+
+		</div>
+	</div>
+<hr/>
+	<div class="foot-div">
+		<p class="p-foot">This document was created by <a href="./main/aboutme.html">liwen</a>,
+		<br/>
+		in 2017.06.12
+		</p>
+	</div>
+</body></html>

@@ -1,0 +1,141 @@
+﻿<html>
+	<head>
+	<title>帮助文档使用</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="../css/green.css" />
+	<link rel="stylesheet" href="../css/style.css" type="text/css">
+	
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/jquery.toTop.js"></script>
+	<script src="../js/collate.js"></script>
+	<style>
+		.to-top{
+		position: absolute;
+	    cursor: default;
+	    display: block;
+	    overflow: hidden;
+	    padding: 0;
+	    position: fixed;
+	    z-index: 9999;
+	    background: url("../img/top.png") no-repeat scroll 0 0 transparent;
+	    right: 30px;
+	    bottom: 30px;
+	    width: 75px;
+	    height: 100px;
+		}
+	
+	    li{ list-style: none; float: left; }
+		#skin li{ width: 10px; height: 10px; padding: 5px; margin-right: 10px; cursor: pointer; }
+		#skin li:nth-child(1){ background: red; }
+		#skin li:nth-child(2){ background: green; }
+		#skin li:nth-child(3){ background: black; }
+		
+		dd p{
+		margin-left:70px;
+		}
+	</style>
+	<script>
+    $(document).ready(function () {
+        $('.to-top').toTop({
+            autohide: true,
+            offset: 420,
+            speed: 500,
+            position: true,
+            right: 15,
+            bottom: 85
+        });
+    });
+
+	</script>
+	<script>
+		window.onload = function(){
+			var link = document.getElementsByTagName("link")[0];
+			var skin = document.getElementById("skin").getElementsByTagName("li");
+
+			for( var i =0; i<skin.length; i++ ){
+				skin[i].onclick = function(){
+					for( var a in skin ){
+						skin[a].className = "";
+					}
+					this.className = "current";
+					link['href'] = "../css/"+this.id+".css";
+				}
+			}
+
+		}
+	</script>
+	</head>
+<body>
+<h1 align="center">如何使用java帮助文档</h1>
+		<ul id="skin">
+			<li id="red" title="红色"></li>
+			<li id="green" class="current" title="绿色"></li>
+			<li id="black" title="黑色"></li>
+		</ul>
+		<br />
+<div id="main">
+	<h2>1:打开帮助文档</h2>
+	<h2>2:点击显示，找到索引，看到输入框</h2>
+	<h2>3:知道你要找谁?以Scanner举例</h2>
+	<h2>4:在输入框里面输入Scanner，然后回车</h2>
+	<h2>5.看包</h2>
+	<div class="content">
+	<p>01.java.lang包下的类不需要导入，其他的全部需要导入。</p>
+	<p>要导入  java.util.Scanner</p>
+	</div>
+	
+	<h2>6:再简单的看看类的解释和说明，别忘了看看该类的版本</h2>
+	<h2>7:看类的结构</h2>
+	<div class="content">
+	<p>用{}括起来的代码。
+	</p>
+	<dl>
+		<dt><B>成员变量:</B></dt>
+		<dd>A:字段摘要</dd>
+		<br/>
+		<dt><B>构造方法:</B></dt>
+		<dd>A:构造方法摘要</dd>
+		<br/>
+		<dt><B>成员方法:</B></dt>
+		<dd>A:方法摘要</dd>
+		<br/>
+	</dl>
+	</div>
+	
+	<h2>8:学习构造方法</h2>
+	<div class="content">
+	<dl>
+		<dt><B>有构造方法：</B></dt>
+		<dd>A:就创建相应的对象</dd>
+		<dt><B>没有构造方法：</B></dt>
+		<dd>A:成员可能都是静态的</dd>
+		<br/>
+	</dl>
+	</div>
+	
+	<h2>9:看成员方法</h2>
+	<div class="content">
+	<dl>
+		<dt><B>左边</B></dt>
+		<dd>A:是否静态：如果静态，可以通过类名调用</dd>
+		<br/>
+		<dd>B:返回值类型：人家返回什么，你就用什么接收。</dd>
+		<dt><B>右边</B></dt>
+		<dd>A:看方法名：方法名称不要写错</dd>
+		<br/>
+		<dd>B:参数列表：人家要什么，你就给什么；人家要几个，你就给几个</dd>
+	</dl>
+	</div>
+</div>
+<hr/>
+
+<div class="foot-div">
+<p class="p-foot">This document was created by <a href="./aboutme.html">liwen</a>,
+<br/>
+in 2017.06.12
+</p>
+</div>
+
+<div class="to-top" style="cursor: pointer; position: fixed; right: 15px; bottom: 25px; display: block;">  </div>
+</body>
+</html>

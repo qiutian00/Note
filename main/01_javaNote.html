@@ -1,0 +1,355 @@
+<html>
+	<head>
+	<title>01_javaNote</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="../css/green.css" />
+	<link rel="stylesheet" href="../css/style.css" type="text/css">
+	
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/jquery.toTop.js"></script>
+	<script src="../js/collate.js"></script>
+	<style>
+		.to-top{
+		position: absolute;
+	    cursor: default;
+	    display: block;
+	    overflow: hidden;
+	    padding: 0;
+	    position: fixed;
+	    z-index: 9999;
+	    background: url("../img/top.png") no-repeat scroll 0 0 transparent;
+	    right: 30px;
+	    bottom: 30px;
+	    width: 75px;
+	    height: 100px;
+		}
+	
+	    li{ list-style: none; float: left; }
+		#skin li{ width: 10px; height: 10px; padding: 5px; margin-right: 10px; cursor: pointer; }
+		#skin li:nth-child(1){ background: #F4C1C8; }
+		#skin li:nth-child(2){ background: #C8E3C1; }
+		#skin li:nth-child(3){ background: #DDDDDD; }
+		@font-face {
+		  font-family:"MyNewFont";
+		  src: url('../ttf/akaFrivolity.ttf');
+		  }
+		#show{
+		font-family:MyNewFont;
+		font-size:20px;
+		color:#4DCE61;
+		font-weight:bold;
+		}
+	</style>
+	<script>
+    $(document).ready(function () {
+        $('.to-top').toTop({
+            autohide: true,
+            offset: 420,
+            speed: 500,
+            position: true,
+            right: 15,
+            bottom: 85
+        });
+    });
+	</script>
+	<script>
+		window.onload = function(){
+			var link = document.getElementsByTagName("link")[0];
+			var skin = document.getElementById("skin").getElementsByTagName("li");
+
+			for( var i =0; i<skin.length; i++ ){
+				skin[i].onclick = function(){
+					for( var a in skin ){
+						skin[a].className = "";
+					}
+					this.className = "current";
+					link['href'] = "../css/"+this.id+".css";
+				}
+			}
+
+		}
+		
+		
+		//获得当前时间,刻度为一千分一秒
+		var initializationTime=(new Date()).getTime();
+		function showTime()
+		{
+		var now=new Date();
+		var year=now.getFullYear();
+		var month=now.getMonth();
+		var day=now.getDate();
+		var hours=now.getHours();
+		var minutes=now.getMinutes();
+		var seconds=now.getSeconds();
+		if (month >= 1 && month <= 9) {
+				month = "0" + month;
+			}
+		if (day >= 0 && day <= 9) {
+				day = "0" + day;
+			}
+		document.all.show.innerHTML=""+year+"年"+month+"月"+day+"日 "+hours+":"+minutes+":"+seconds+"";
+		//一秒刷新一次显示时间
+		var timeID=setTimeout(showTime,1000);
+		}
+	</script>
+	</head>
+<body onload="showTime()">
+<h1 align="center">01_javaNote</h1>
+		<ul>
+			<li><a href="../index.html">首页<a></li>
+			<li><a href="../main_shuxing.html">上一页<a></li>
+		</ul>
+		<ul id="skin">
+			<li id="red" title="红色"></li>
+			<li id="green" class="current" title="绿色"></li>
+			<li id="black" title="黑色"></li>
+		</ul>
+		<br />
+<div id="main">
+	<h2>关键字</h2>[<I>(掌握)</I>]
+	<div class="content">
+	<p>定义：被Java语言赋予特定含义的单词</p>
+	<dl>
+		<dt><B>特点：</B></dt>
+		<dd>全部小写。</dd>
+		<dt><B>注意事项：</B></dt>
+		<dd>1.goto和const作为保留字存在。</dd>
+		<br/>
+		<dd>2.类似于Notepad++这样的高级记事本会对关键字有特殊颜色标记
+		</dd>
+	</dl>
+	</div>
+	
+	<h2>标识符</h2>[<I>(掌握)</I>]
+	<div class="content">
+	<p>定义：给类，接口，方法，变量等起名字的字符序列
+	</p>
+	<dl>
+		<dt><B>组成规则：</B></dt>
+		<dd>英文大小写字母；数字；$</dd>
+		<dt><B>注意事项：</B></dt>
+		<dd>A:不能以数字开头</dd>
+		<br/>
+		<dd>B:不能是java中的关键字
+		</dd>
+		<br/>
+		<dd>C:区分大小写
+		</dd>
+		<dt><B>常见的命名规则</B></dt>
+		<dd>A:包 全部小写</dd>
+		<br/>
+		<dd>
+		举列：liwe.com;edu.hunan.liwen02
+		</dd>
+		<br/>
+		<dd>B:类或者接口:一个单词：首字母大写&nbsp;多个单词：每个单词首字母大写
+		</dd>
+		<br/>
+		<dd>
+		举列：Demo;HelloWorld
+		</dd>
+		<br/>
+		<dd>C:方法或者变量:一个单词：首字母小写&nbsp;多个单词：从第二个单词开始，每个单词首字母大写
+		</dd>
+		<br/>
+		<dd>
+		举列：name;studentAge
+		</dd>
+		<br/>
+		<dd>D:常量:一个单词：大写&nbsp;多个单词：大写，并用_隔开
+		</dd>
+		<br/>
+		<dd>
+		举列：PI;STUDENT_MAX_AGE
+		</dd>
+	</dl>
+	</div>
+	
+	<h2>常量</h2>[<I>(掌握)</I>]
+	<div class="content">
+	<p>定义：在程序执行的过程中，其值不发生改变的量
+	</p>
+	<dl>
+		<dt><B>分类：</B></dt>
+		<dd>英文大小写字母；数字；$</dd>
+		<dt><B>注意事项：</B></dt>
+		<dd>A:字面值常量</dd>
+		<br/>
+		<dd>B:自定义常量
+		</dd>
+		<br/>
+		<dt><B>字面值常量:</B></dt>
+		<dd>A:字符串常量 "hello"</dd>
+		<br/>
+		<dd>B:整数常量	12,23
+		</dd>
+		<br/>
+		<dd>C:小数常量	12.345
+		</dd>
+		<br/>
+		<dd>D:字符常量	'a','A','0'
+		</dd>
+		<br/>
+		<dd>E:布尔常量	true,false
+		</dd>
+		<br/>
+		<dd>F:空常量	null
+		</dd>
+		<br/>
+		<dt><B>在Java中针对整数常量提供了四种表现形式:</B></dt>
+		<dd>A:二进制	由0，1组成。以0b开头。</dd>
+		<br/>
+		<dd>B:八进制	由0，1，...7组成。以0开头。
+		</dd>
+		<br/>
+		<dd>C:十进制由0，1，...9组成。整数默认是十进制。
+		</dd>
+		<br/>
+		<dd>D:十六进制	由0，1，...9,a,b,c,d,e,f(大小写均可)组成。以0x开头。
+		</dd>
+	</dl>
+	</div>
+	
+	<h2>进制转换</h2>[<I>(了解)</I>]
+	<div class="content">
+	<dl>
+		<dt><B>其他进制到十进制</B></dt>
+		<dd>A:系数：就是每一个位上的数值
+		基数：x进制的基数就是x</dd>
+		<br/>
+		<dd>B:权：对每一个位上的数据，从右，并且从0开始编号，对应的编号就是该数据的权。</dd>
+		<dt><B>十进制到其他进制:</B></dt>
+		<dd>A:除基取余，直到商为0，余数反转。</dd>
+		<dt><B>进制转换的快速转换法:</B></dt>
+		<dd>A:十进制和二进制间的转换
+			8421码。
+		</dd>
+		<br/>
+		<dd>B:二进制到八进制，十六进制的转换
+		</dd>
+	</dl>
+	</div>
+	
+	<h2>变量</h2>[<I>(掌握)</I>]
+	<div class="content">
+	<p>定义：在程序的执行过程中，其值在某个范围内可以发生改变的量</p>
+	<dl>
+		<dt><B>变量的定义格式：</B></dt>
+		<dd>A:数据类型 变量名 = 初始化值;
+		</dd>
+		<br/>
+		<dd>B:数据类型 变量名;
+		  变量名 = 初始化值;
+		</dd>
+	</dl>
+	</div>
+	
+	<h2>数据类型</h2>[<I>(掌握)</I>]
+	<div class="content">
+	<p>Java是一种强类型语言，针对每种数据都提供了对应的数据类型。</p>
+	<dl>
+		<dt><B>分类：</B></dt>
+		<dd>A:基本数据类型：4类8种
+		</dd>
+		<br/>
+		<dd>B:引用数据类型：类，接口，数组。
+		</dd>
+		<dt><B>基本数据类型：</B></dt>
+		<dd>A:整数 byte:1字节 short:2字节
+		int:4字节 long:8字节
+		</dd>
+		<br/>
+		<dd>B:浮点型 float:4字节 double:8字节
+		</dd>
+		<br/>
+		<dd>c:字符型 char:2字节
+		</dd>
+		<br/>
+		<dd>D:布尔型 boolean 1字节
+		</dd>
+		<dt><b>注意</b></dt>
+		<dd>A:整数默认是int类型，浮点数默认是double。
+		</dd>
+		<br/>
+		<dd>B:长整数要加L或者l。
+		</dd>
+		<br/>
+		<dd>c:单精度的浮点数要加F或者f。
+		</dd>
+	</dl>
+	</div>
+	
+	<h2>数据类型转换</h2>[<I>(掌握)</I>]
+	<div class="content">
+	<p>boolean类型不参与转换</p>
+	<dl>
+		<dt><B>默认转换：</B></dt>
+		<dd>A:从小到大
+		</dd>
+		<br/>
+		<dd>B:byte,short,char >>int >> long >> float >> double
+		</dd>
+		<br/>
+		<dd>C:byte,short,char之间不相互转换，直接转成int类型参与运算。
+		</dd>
+		<dt><B>强制转换:</B></dt>
+		<dd>A:从大到小
+		</dd>
+		<br/>
+		<dd>B:可能会有精度的损失，一般不建议这样使用。
+		</dd>
+		<br/>
+		<dd>C:格式：
+			目标数据类型 变量名 = (目标数据类型) (被转换的数据);
+		</dd>
+	</dl>
+	</div>
+	
+	<h2>问题</h2>[<I>(homework)</I>]
+	<div class="content">
+	<p>A:下面两种方式有区别吗?
+			float f1 = 12.345f;
+			float f2 = (float)12.345;
+	</p>
+	<p>B:下面的程序有问题吗，如果有，在哪里呢?
+			byte b1 = 3;
+			byte b2 = 4;
+			byte b3 = b1 + b2;
+	<br/>
+			byte b4 = 3 + 4;
+	</p>
+	<p>C:下面的操作结果是什么呢?
+			byte b = (byte)130;
+	</p>
+	<p>D:字符参与运算
+			是查找ASCII里面的值
+			'a'		97
+			'A'		65
+			'0'		48
+	<br/>		
+			System.out.println('a');
+			System.out.println('a' + 1);
+	</p>
+	<p>E:字符串参与运算 这里其实是字符串的连接
+	System.out.println("hello"+'a'+1);
+	<br/>
+	System.out.println('a'+1+"hello");
+	<br/>
+	System.out.println("5+5="+5+5);
+	<br/>
+	System.out.println(5+5+"=5+5");
+	</p>
+	</div>
+	
+</div>
+<hr/>
+
+<div class="foot-div">
+<p class="p-foot">This document was created by <a href="./aboutme.html">liwen</a>; in 2017.06.12
+<br/>
+<label id="show">now time is ...</label>
+</p>
+</div>
+<div class="to-top" style="cursor: pointer; position: fixed; right: 15px; bottom: 25px; display: block;">  </div>
+</body>
+</html>
