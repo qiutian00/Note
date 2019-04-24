@@ -2,11 +2,14 @@
 a note project for task
 
 # content
-some pic
-> * ![image](https://github.com/qiutian00/Note/blob/master/img/showing/index.png)
-> * ![image](https://github.com/qiutian00/Note/blob/master/img/showing/doc.png)
-> * ![image](https://github.com/qiutian00/Note/blob/master/img/showing/treeNote.png)
-> * ![image](https://github.com/qiutian00/Note/blob/master/img/showing/fan.png)
+> * index ui
+![image](https://github.com/qiutian00/Note/blob/master/img/showing/index.png)
+> * doc ui
+![image](https://github.com/qiutian00/Note/blob/master/img/showing/doc.png)
+> * treeNote ui
+![image](https://github.com/qiutian00/Note/blob/master/img/showing/treeNote.png)
+> * fan ui
+![image](https://github.com/qiutian00/Note/blob/master/img/showing/fan.png)
 
 # conclusion
 > * showing things for others is good things.
